@@ -2,16 +2,23 @@
 {% load account_tags %}
 
 
-<ul class="nav navbar-nav pull-right">
+<ul class="account-bar">
     {% if request.user.is_authenticated %}
-        <li class="navbar-text">
-            <i class="fa fa-user"></i> {% user_display request.user %}
+        <li class="user">
+            <i></i>
+            {% user_display request.user %}
         </li>
-        <li>
-            <a href="{% url 'account_settings' %}"><i class="fa fa-cog"></i> {% trans "Settings" %}</a>
+        <li class="settings">
+            <a href="{% url 'account_settings' %}">
+                <i></i>
+                {% trans "Settings" %}
+            </a>
         </li>
-        <li>
-            <a id="account_logout" href="{% url 'account_logout' %}"><i class="fa fa-power-off"></i> {% trans "Log out" %}</a>
+        <li class="logout">
+            <a id="account_logout" href="{% url 'account_logout' %}">
+                <i></i>
+                {% trans "Log out" %}
+            </a>
         </li>
     {% else %}
         <li><a href="{% url 'account_login' %}">{% trans "Log in" %}</a></li>

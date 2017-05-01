@@ -7,8 +7,8 @@
 {% block body_class %}home{% endblock %}
 
 {% block body_base %}
-    <section class="jumbotron">
-        <div class="container">
+    <section class="welcome">
+        <div>
             {% include "_messages.html" %}
             <h1>{% blocktrans %}Welcome to<br>pinax-project-account{% endblocktrans %}</h1>
             <p>
@@ -20,16 +20,17 @@
                 {% endblocktrans %}
             </p>
             {% if not user.is_authenticated %}
-            {% url "account_login" as login_url %}
-            {% url "account_signup" as signup_url %}
-            <p>{% blocktrans %}You can <a href="{{ login_url }}" class="btn btn-default">Log In</a> or <a href="{{ signup_url }}" class="btn btn-primary">Sign Up</a> to try out the site.{% endblocktrans %}</p>
+                <hr />
+                {% url "account_login" as login_url %}
+                {% url "account_signup" as signup_url %}
+                <p>{% blocktrans %}You can <a href="{{ login_url }}" class="login">Log In</a> or <a href="{{ signup_url }}" class="signup">Sign Up</a> to try out the site.{% endblocktrans %}</p>
             {% endif %}
         </div>
     </section>
-    <section>
-        <div class="container">
-            <h2 class="text-center">{% blocktrans %}What is Pinax?{% endblocktrans %}</h2>
-            <p class="lead">
+    <section class="what-is-pinax">
+        <div>
+            <h2>{% blocktrans %}What is Pinax?{% endblocktrans %}</h2>
+            <p>
                 {% blocktrans %}
                 <b>Pinax</b> is an open-source platform based on Django and
                 intended to provide a starting point for websites. It takes
@@ -38,24 +39,24 @@
                 {% endblocktrans %}
             </p>
             <div class="feature-columns">
-                <div>
-                    <i class="fa fa-cubes fa-3x"></i><br>
+                <div class="starter-projects">
+                    <i></i><br>
                     {% blocktrans %}
                     <b>Starter projects</b> provide project layout,
                     scaffolding, already integrated components and
                     ready-to-go code.
                     {% endblocktrans %}
                 </div>
-                <div>
-                    <i class="fa fa-puzzle-piece fa-3x"></i><br>
+                <div class="apps">
+                    <i></i><br>
                     {% blocktrans %}
                     <b>Reusable apps</b> provide common
                     infrastructure, back-end functionality,
                     and user-facing components.
                     {% endblocktrans %}
                 </div>
-                <div>
-                    <i class="fa fa-tint fa-3x"></i><br>
+                <div class="themes">
+                    <i></i><br>
                     {% blocktrans %}
                     <b>Themes</b> provide default templates and
                     stylesheets for quick prototyping and easy customization.
@@ -64,9 +65,9 @@
             </div>
         </div>
     </section>
-    <section>
-        <div class="container">
-            <p class="lead text-center">
+    <section class="see-more">
+        <div>
+            <p>
                 {% blocktrans %}
                 See <a href="http://pinaxproject.com/">pinaxproject.com</a>
                 for more information.

@@ -1,0 +1,80 @@
+section {
+  > div {
+    @extend .container;
+  }
+  &.welcome {
+    @extend .jumbotron;
+    h1 {
+      @extend .display-2;
+    }
+    p {
+      @extend .lead;
+    }
+    hr {
+      @extend .my-4;
+    }
+    a.login {
+      @extend .btn;
+      @extend .btn-secondary;
+    }
+    a.signup {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+  &.what-is-pinax {
+    h2 {
+      @extend .text-center;
+    }
+    > div > p {
+      @extend .lead;
+    }
+    .feature-columns {
+      @include make-row();
+      > div {
+        @include make-col-ready();
+        @include make-col(4);
+        &.starter-projects {
+          i {
+            @include icon(cubes, 48px);
+          }
+        }
+        &.apps {
+          i {
+            @include icon(puzzle-piece, 48px);
+          }
+        }
+        &.themes {
+          i {
+            @include icon(tint, 48px);
+          }
+        }
+      }
+    }
+  }
+  &.see-more {
+    p {
+      @extend .lead;
+      @extend .text-center;
+      @extend .my-5;
+    }
+  }
+}
+
+.subnav-container {
+  @include make-row();
+  nav {
+    @include make-col-ready();
+    @include make-col(4);
+  }
+  section {
+    @include make-col-ready();
+    @include make-col(8);
+  }
+}
+
+footer {
+  > div {
+    @extend .container;
+  }
+}

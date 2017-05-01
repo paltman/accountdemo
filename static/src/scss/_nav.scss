@@ -1,0 +1,55 @@
+header {
+  @extend .navbar;
+  @extend .navbar-toggleable-md;
+  @extend .navbar-light;
+  @extend .bg-faded;
+
+  nav {
+    @extend .container;
+    button.expand {
+      @extend .navbar-toggler;
+      @extend .navbar-toggler-right;
+      i {
+        @include icon(bars);
+      }
+    }
+    > a {
+      @extend .navbar-brand;
+    }
+
+    .nav-container {
+      @extend .collapse;
+      @extend .navbar-collapse;
+
+      ul.main-bar {
+        @extend .mr-auto;
+      }
+      ul {
+        @extend .navbar-nav;
+        li {
+          @extend .nav-item;
+          a {
+            @extend .nav-link;
+          }
+          &.user {
+            @extend .navbar-text;
+            padding-right: .5rem;
+            i {
+              @include icon(user);
+            }
+          }
+          &.settings {
+            i {
+              @include icon(cog);
+            }
+          }
+          &.logout {
+            i {
+              @include icon(power-off);
+            }
+          }
+        }
+      }
+    }
+  }
+}
