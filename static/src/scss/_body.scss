@@ -1,3 +1,7 @@
+section#content_body {
+  @extend .mt-3;
+}
+
 section {
   > div {
     @extend .container;

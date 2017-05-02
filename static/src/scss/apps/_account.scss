@@ -1,0 +1,67 @@
+body.account-settings .account-settings,
+body.account-password .account-password,
+body.account-delete .account-delete {
+  color: $list-group-link-active-color!important;
+  background-color: $list-group-link-active-bg!important;
+}
+
+body.account {
+  .subnav-container {
+    nav.settings-nav {
+      display: inherit;
+      flex-direction: inherit;
+      flex: inherit;
+      max-width: 100%;
+      @extend .list-group;
+      div.heading {
+        @extend .list-group-item;
+        font-weight: 600;
+        font-size: 125%;
+        @extend .w-100;
+      }
+      a {
+        @extend .list-group-item;
+        @extend .list-group-item-action;
+        @extend .w-100;
+      }
+    }
+  }
+}
+
+
+body.account {
+  .login,
+  .signup {
+    @include make-row();
+    > div {
+      @include make-col-ready();
+      @include make-col(4);
+      form {
+        button {
+          @extend .btn;
+          @extend .btn-primary;
+        }
+        .forgot-password {
+          @extend .btn;
+          @extend .btn-link;
+        }
+      }
+      p.login-signup {
+        @extend .my-3;
+        a {
+          font-weight: 600;
+        }
+      }
+    }
+    aside {
+      @include make-col-ready();
+      @include make-col(8);
+    }
+  }
+}
+
+body.account-settings {
+  form {
+    @extend .w-50;
+  }
+}
